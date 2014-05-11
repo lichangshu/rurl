@@ -26,13 +26,13 @@ public interface UserinfoService {
     /**
      * 列出部门的所有员工
      *
-     * @param did
+     * @param did 部门id
      * @return
      */
     public List<Employe> findEmployeByDepartmentId(String did);
 
     /**
-     * 根据 name 查找员工.（可以是姓名也可以是账户，由实现决定）
+     * 根据 account 查找员工.（可以是姓名也可以是账户，由实现决定）
      *
      * @param account
      * @return
