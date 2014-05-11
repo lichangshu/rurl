@@ -60,15 +60,76 @@ Rurl 是一个基于URL的权限控制系统,可以实现应用和权限的分�
 ---------------------
 接口使用 hessian 的远程方法调用(RMI).
 
+
 		public interface RurlRightService {
-		    public Map<String, Object> login(String account, String password) throws NoRightException;
-		    public Map<String, Object>[] listAccountUrlRight(String appname, String account);
-		    public Map<String, Object>[] listUrlRight(String appname);
-		    public Map<String, Object> getApplication(String appname);
-		    public boolean hasLoginRight(String appname, String account);
-		    public Map<String, Object>[] saveURL(String appname, String[] url);
-		    public Map<String, Object> save4url(String appname, String url);
+
+			/**
+			 * 
+			 * 使用账户密码登录.
+			 * 如果登录失败 会抛出异常, NoRightException 的 getMessage 可以获取错误的原因.
+			 * 
+			 * @param account
+			 * @param password
+			 * @return
+			 * @throws NoRightException 
+			 */
+			public Map<String, Object> login(String account, String password) throws NoRightException;
+
+			/**
+			 * 某账户是否有登录应用(appname)的权限.
+			 * 跟 login 方法分开的目的是 login 方法是用户系统实现的方法,而该方法是用于 RURL系统 来实现的.
+			 * 
+			 * @param appname
+			 * @param account
+			 * @return 
+			 */
+			public boolean hasLoginRight(String appname, String account);
+
+			/**
+			 * 列出某个账户在某个应用中的,拥有权限的所有URL.
+			 * 
+			 * @param appname
+			 * @param account
+			 * @return 
+			 */
+			public Map<String, Object>[] listAccountUrlRight(String appname, String account);
+
+			/**
+			 * 列出某应用中的被配置在 RURL系统 中的所有URL.
+			 * 
+			 * @param appname
+			 * @return 
+			 */
+			public Map<String, Object>[] listUrlRight(String appname);
+
+			/**
+			 * 获取应用的配置信息.
+			 * 
+			 * @param appname
+			 * @return 
+			 */
+			public Map<String, Object> getApplication(String appname);
+
+			/**
+			 * 保存一组URL, 用于客户端主动向服务器添加URL.
+			 * 详细见 save4url(String appname, String url) 方法
+			 * @param appname
+			 * @param url
+			 * @return 
+			 */
+			public Map<String, Object>[] saveURL(String appname, String[] url);
+
+			/**
+			 * 保存单个URL, 用于客户端主动向服务器添加URL.
+			 * 对于已经存在的url不会继续添加,更不会修改.
+			 * 
+			 * @param appname
+			 * @param url
+			 * @return 
+			 */
+			public Map<String, Object> save4url(String appname, String url);
 		}
+
 注意如果打算修改源码,建议不用使用 重载/多态(因为有的语言不支持,导致hessian不必要的麻烦)
 
 数据集合只使用数组和map,因为不同语言数据结构映射会有不同.
