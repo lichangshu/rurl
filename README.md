@@ -6,8 +6,7 @@ Rurl 是一个基于URL的权限控制系统,通过拦截用户访问的url,查�
 
 程序分为两部分,rurl服务器端和应用客户端(一般为web应用).
 
-rurl服务器端为普通的 java web应用, 客户端根据应用的不同可以选择不同语言的实现.暂时应用客户端只有 java 版本的实现, python 和 php 版本实现稍后添加!
-客户端地址 https://github.com/lichangshu/rurl-cli 
+该服务器端使用java实现,应用客户端根据应用的不同可以选择不同语言的实现.暂时应用客户端只有 java 版本的实现, python 和 php 版本实现稍后添加! https://github.com/lichangshu/rurl-cli
 其他语言因个人技术限制,暂时没计划.如有感兴趣的可以联系 E-mail: lchshu001@gmail.com .
 
 安装
