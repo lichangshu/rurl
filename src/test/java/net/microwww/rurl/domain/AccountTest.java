@@ -7,7 +7,6 @@ package net.microwww.rurl.domain;
 
 import com.alibaba.fastjson.JSONObject;
 import javax.annotation.Resource;
-import net.microwww.common.BeanContextFactory;
 import net.microwww.common.spring.SpringDispatcherServlet;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -21,7 +20,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @author changshu.li
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({"/config/applicateioncontext.xml"})
+@ContextConfiguration({"/config/applicationcontext.xml"})
 public class AccountTest {
 
     @Resource

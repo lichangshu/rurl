@@ -19,7 +19,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @author changshu.li
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({"/config/applicateioncontext.xml"})
+@ContextConfiguration({"/config/applicationcontext.xml"})
 public class AccountGroupsRepositoryTest {
 
     @Resource

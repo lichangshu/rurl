@@ -9,7 +9,7 @@
         <servlet-class>net.microwww.common.spring.SpringDispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath*:config/applicateioncontext.xml,classpath*:config/mvc-servlet.xml</param-value>
+            <param-value>classpath*:config/applicationcontext.xml,classpath*:config/mvc-servlet.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
