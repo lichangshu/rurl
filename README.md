@@ -28,3 +28,4 @@ Rurl 是一个基于URL的权限控制系统,通过拦截用户访问的url,查�
 
 因此如果自己实现客户端程序,可以故意的错用或误用默认的规则,来实现自己的权限判断功能.
 
+WIKI : https://github.com/lichangshu/rurl/wiki
